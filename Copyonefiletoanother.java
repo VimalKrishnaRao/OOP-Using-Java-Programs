@@ -10,7 +10,7 @@ public class FileCopy
         String srcFile = "src.txt";
         String destFile = "dest.txt";
         try (FileInputStream in = new FileInputStream(srcFile);
-             FileOutputStream out = new FileOutputStream(destFile)) 
+             FileOutputStream out = new FileOutputStream(destFile, true)) 
              {
                 int b;
                 while ((b = in.read()) != -1) 
@@ -26,3 +26,5 @@ public class FileCopy
              }
     }
 }
+
+//Here, the FileOutputStream is constructed with the true flag, which indicates that the data from the source file should be appended to the end of the destination file, rather than overwriting it.
